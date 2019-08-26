@@ -12,7 +12,7 @@ services:
        MYSQL_USER: deskreeStudio
        MYSQL_PASSWORD: deskreeStudio
 
-   api:
+   app:
      build: .
      command: php artisan serve --host=0.0.0.0
      ports:
