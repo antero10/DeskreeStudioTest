@@ -63,7 +63,7 @@
                                     </a>
                                 @endif
                             </div>
-                        </div>
+                        </div>  
                     </form>
                 </div>
             </div>
