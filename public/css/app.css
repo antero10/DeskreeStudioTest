@@ -10644,6 +10644,10 @@ a.text-dark:focus {
   }
 }
 
+.selected {
+  background-color: blue;
+}
+
 .padding-50px {
   padding: 50px;
 }
