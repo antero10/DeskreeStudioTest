@@ -17,6 +17,7 @@ class CreateUserFilesTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('name');
             $table->string('url');
             $table->timestamps();
         });
