@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\UserFiles;
+use File;
 
 class HomeController extends Controller
 {
@@ -48,6 +49,7 @@ class HomeController extends Controller
         return Storage::download('files/'.$fileName);
       }
       if (Input::get('urls')) {
+        File::delete(storage_path('download.zip'));
         $urls = explode(',', Input::get('urls'));
         $zipper = new \Chumper\Zipper\Zipper;
         $zipper->make(storage_path('download.zip'))->add(
