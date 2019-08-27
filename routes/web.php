@@ -27,3 +27,6 @@ Route::post('/2fa', function () {
 
 
 Route::post('/upload', 'HomeController@upload');
+
+
+Route::get('/download/{fileName?}','HomeController@download');
