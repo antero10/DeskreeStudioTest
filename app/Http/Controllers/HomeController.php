@@ -64,9 +64,12 @@ class HomeController extends Controller
     public function delete(Request $request)
     {
       if (Input::get('file')) {
-        $file = Input::get('file');
-        Storage::delete($file);
-        UserFiles::where('url', $file)->first()->forceDelete();
+        $fileUrl = Input::get('file');
+        $userFile = UserFiles::where('url', $file)->first();
+        if ($userFile) {
+          $userFile->forceDelete();
+          Storage::delete($fileUrl);
+        }
         return redirect('home');
       }
     }
