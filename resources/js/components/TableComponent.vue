@@ -14,8 +14,8 @@
           <input :value="item" type="checkbox" v-model="checkedItems" v-on:change="selectRow(item)"></input>
         </th>
         <th scope="row">{{item.id}}</th>
-        <td>{{fileUrl(item.url)}}</td>
-        <td><a :href="item.url">Download Here</a></td>
+        <th> {{item.url}} </th>
+        <td><a v-bind:href="fileUrl(item.url)">Download Here</a></td>
       </tr>
     </tbody>
   </table>
@@ -51,7 +51,7 @@
             serverBus.$emit('activeItem', this.checkedItems);
           },
           fileUrl: (url) => {
-            return url.replace('/file','/download');
+            return url.replace('files/','download/');
           }
         },
         
