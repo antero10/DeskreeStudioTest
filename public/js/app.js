@@ -1747,7 +1747,7 @@ __webpack_require__.r(__webpack_exports__);
       _app__WEBPACK_IMPORTED_MODULE_0__["serverBus"].$emit('activeItem', this.checkedItems);
     },
     fileUrl: function fileUrl(url) {
-      return url.replace('/file', '/download');
+      return url.replace('files/', 'download/');
     }
   }
 });
@@ -37154,10 +37154,12 @@ var render = function() {
           _vm._v(" "),
           _c("th", { attrs: { scope: "row" } }, [_vm._v(_vm._s(item.id))]),
           _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(_vm.fileUrl(item.url)))]),
+          _c("th", [_vm._v(" " + _vm._s(item.url) + " ")]),
           _vm._v(" "),
           _c("td", [
-            _c("a", { attrs: { href: item.url } }, [_vm._v("Download Here")])
+            _c("a", { attrs: { href: _vm.fileUrl(item.url) } }, [
+              _vm._v("Download Here")
+            ])
           ])
         ])
       }),
@@ -49631,8 +49633,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/gustavosanchez/Documents/DeskreeStudio/testBackEnd/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/gustavosanchez/Documents/DeskreeStudio/testBackEnd/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/gustavosanchez/Documents/DeskreeStudio/DeskreeStudioTest/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/gustavosanchez/Documents/DeskreeStudio/DeskreeStudioTest/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
