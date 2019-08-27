@@ -12,7 +12,7 @@
                   </form>
                 </div>
                 <div class="card-body">
-                  <table-component :data="{{ json_encode(Auth::user()->files) }}"></table-component>
+                  <table-component :data="{{ json_encode(Auth::user()->files) }}" csrf="{{ csrf_token() }}">></table-component>
                 </div>
             </div>
         </div>

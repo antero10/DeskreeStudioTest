@@ -30,3 +30,5 @@ Route::post('/upload', 'HomeController@upload');
 
 
 Route::get('/download/{fileName?}','HomeController@download');
+
+Route::post('/delete','HomeController@delete');

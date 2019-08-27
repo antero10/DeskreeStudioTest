@@ -1721,10 +1721,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    data: Array
+    data: Array,
+    csrf: String
   },
   data: function data() {
     return {
@@ -37152,13 +37160,31 @@ var render = function() {
             })
           ]),
           _vm._v(" "),
-          _c("th", { attrs: { scope: "row" } }, [_vm._v(_vm._s(item.id))]),
+          _c("td", { attrs: { scope: "row" } }, [_vm._v(_vm._s(item.id))]),
           _vm._v(" "),
-          _c("th", [_vm._v(" " + _vm._s(item.url) + " ")]),
+          _c("td", [_vm._v(" " + _vm._s(item.url) + " ")]),
           _vm._v(" "),
           _c("td", [
             _c("a", { attrs: { href: _vm.fileUrl(item.url) } }, [
               _vm._v("Download Here")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("td", [
+            _c("form", { attrs: { method: "POST", action: "/delete" } }, [
+              _c("input", {
+                attrs: { type: "hidden", name: "_token" },
+                domProps: { value: _vm.csrf }
+              }),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-danger",
+                  attrs: { name: "file", value: item.url }
+                },
+                [_vm._v(" Delete ")]
+              )
             ])
           ])
         ])
@@ -37180,7 +37206,9 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Name")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("URL")])
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("URL")]),
+        _vm._v(" "),
+        _c("th")
       ])
     ])
   }
