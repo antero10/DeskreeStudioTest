@@ -65,7 +65,7 @@ class HomeController extends Controller
     {
       if (Input::get('file')) {
         $fileUrl = Input::get('file');
-        $userFile = UserFiles::where('url', $file)->first();
+        $userFile = UserFiles::where('url', $fileUrl)->first();
         if ($userFile) {
           $userFile->forceDelete();
           Storage::delete($fileUrl);
