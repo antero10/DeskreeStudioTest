@@ -60,4 +60,14 @@ class HomeController extends Controller
         return response()->download(storage_path('download.zip'));
       }
     }
+
+    public function delete(Request $request)
+    {
+      if (Input::get('file')) {
+        $file = Input::get('file');
+        Storage::delete($file);
+        UserFiles::where('url', $file)->first()->forceDelete();
+        return redirect('home');
+      }
+    }
 }
